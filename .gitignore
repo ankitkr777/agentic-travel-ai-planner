@@ -1,0 +1,63 @@
+# ==========================================
+# SECRETS & ENVIRONMENT (NEVER COMMIT THESE)
+# ==========================================
+.env
+.env.local
+.env.production
+.env.staging
+*.pem
+*.key
+
+# ==========================================
+# PYTHON ARTEFACTS
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Testing & Linting Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# AI & VECTOR DATABASES
+# ==========================================
+# FAISS local index file (too large for git, regenerated on startup)
+faiss_index.pkl
+# Leftover ChromaDB folder (if you ever switch back)
+chroma_db/
+
+# ==========================================
+# DATABASES
+# ==========================================
+# Local SQLite files (even though we use Postgres, prevent accidental commits)
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# IDE & OPERATING SYSTEM JUNK
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# LOGS
+# ==========================================
+*.log
+logs/
