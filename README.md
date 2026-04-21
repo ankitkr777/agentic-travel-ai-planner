@@ -1,3 +1,10 @@
-# Agentic AI Travel Planner
+# Agentic Travel AI Planner
 
-Production-level multi-agent AI system using FastAPI, LangChain, and RAG.
+Production-level multi-agent AI system for intelligent travel planning.
+
+Tech Stack:
+FastAPI
+LangChain
+RAG
+SQLAlchemy
+React (frontend)
