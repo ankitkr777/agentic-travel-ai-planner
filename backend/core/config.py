@@ -19,7 +19,10 @@ class Settings(BaseSettings):
     OPENAI_TEMPERATURE: float = 0.0
     FAISS_INDEX_PATH: str = "./faiss_index.pkl"
     RAG_TOP_K_RESULTS: int = 3
-
+    XAI_API_KEY: str = ""
+    AMADEUS_CLIENT_ID: str = ""
+    AMADEUS_CLIENT_SECRET: str = ""
+    
     class Config:
         env_file = ".env"
 
