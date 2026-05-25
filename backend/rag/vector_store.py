@@ -1,6 +1,6 @@
 import os, pickle
-from langchain_community.document_loaders import TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from backend.rag.embeddings import get_embedding_model
 from backend.core.logging import logger
@@ -13,8 +13,9 @@ def init_vector_store():
         embeddings = get_embedding_model()
         docs_path = "backend/rag/documents/travel_tips.md"
         if not os.path.exists(VECTOR_DB_PATH):
-            loader = TextLoader(docs_path)
-            docs = loader.load()
+            with open(docs_path, "r", encoding="utf-8") as file:
+                text_content = file.read()
+            docs = [Document(page_content=text_content)]
             splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
             splits = splitter.split_documents(docs)
             db = FAISS.from_documents(splits, embeddings)
